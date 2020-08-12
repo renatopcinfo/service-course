@@ -5,7 +5,8 @@
   "title": "Backend Course",
   "description": "Reference app for the Backend Course",
   "builders": {
-    "node": "6.x"
+    "node": "6.x",
+    "graphql": "1.x"
   },
   "scripts": {
     "prereleasy": "bash lint.sh"
@@ -13,15 +14,15 @@
   "credentialType": "absolute",
   "policies": [
     {
-       "name": "ADMIN_DS"
-     },
-   {
-     "name": "outbound-access",
-     "attrs": {
-       "host": "api.vtex.com",
-       "path": "/dataentities/*"
-     }
-   }
+      "name": "ADMIN_DS"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "api.vtex.com",
+        "path": "/dataentities/*"
+      }
+    }
   ],
   "dependencies": {
     "vtex.events-example": "0.x"

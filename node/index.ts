@@ -8,6 +8,7 @@ import {
 } from '@vtex/api'
 import { Clients } from './clients'
 import { analytics } from './handlers/analytics'
+import { productList } from './resolvers/products'
 
 // Create a LRU memory cache for the Status client.
 // The @vtex/api HttpClient respects Cache-Control headers and uses the provided cache.
@@ -37,4 +38,11 @@ export default new Service<Clients, State, ParamsContext>({
       GET: [analytics],
     }),
   },
+  graphql: {
+    resolvers: {
+        Query: {
+            productList
+        }
+    },
+  }
 })
