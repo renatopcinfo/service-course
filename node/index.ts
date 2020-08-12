@@ -31,7 +31,7 @@ export default new Service<Clients, State, ParamsContext>({
         timeout: 10000,
       },
     },
-  },
+  },  
   routes: {
     analytics: method({
       GET: [analytics],
